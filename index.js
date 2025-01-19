@@ -93,6 +93,8 @@ async function run() {
         res.send(result);
     });
 
+    // campaigns delete 
+
     app.delete('/campaigns/:id', async (req, res) => {
         const id = req.params.id;
         const result = await campaignsCollection.deleteOne({ _id: new ObjectId(id) });
@@ -115,7 +117,7 @@ async function run() {
     });
 
     app.get('/', (req, res) => {
-        res.send('Hello World');
+        res.send('Hello World in server');
     });
 
     app.listen(PORT, () => {
