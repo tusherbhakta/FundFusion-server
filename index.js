@@ -8,9 +8,7 @@ dotenv.config();
 const app = express();
 
 // middlewares
-app.use(cors(
-
-));
+app.use(cors());
 app.use(express.json());
 
 
@@ -34,7 +32,7 @@ async function run() {
     try {
         // await client.connect();
         console.log("Connected to the server");
-        const database = client.db("crowdHex");
+        const database = client.db("FundFusion");
         const campaignsCollection = database.collection("campaigns");
         const donatationCollection = database.collection("donations");
 
